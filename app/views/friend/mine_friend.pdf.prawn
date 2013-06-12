@@ -1,8 +1,11 @@
 pdf.text @title
 
-
-data = [["Name", "Address", "Email"], [@user]]
-
-@friend.each do |item|
-	pdf.text item.name
+friends = @friend.map do |friend|
+	[
+		friend.name,
+		friend.address,
+		friend.email
+	]
 end  
+
+pdf.table friends
