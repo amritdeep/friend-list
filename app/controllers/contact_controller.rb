@@ -28,6 +28,7 @@ class ContactController < ApplicationController
 
   	else
   		redirect_to contact_contact_me_url
+      flash[:notice] = "If you want to contact me, give me message"
   	end
   end
 end

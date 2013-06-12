@@ -2,7 +2,9 @@
 
 <div class="container">
 	<p><strong><%= @title %></strong><p>
+	<div class="alert alert-success">
 		<%= notice %>
+	</div>
 	<%= will_paginate @friend, previous_label: "<<", next_label: ">>", class: "pagination pagination-large" %>
 	<table class="table table table-striped">
 		<tr>

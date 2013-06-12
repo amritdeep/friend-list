@@ -5,10 +5,10 @@
 	<div class="alert alert-warning">
 		<%= flash[:errors] %>
 	</div>
-	<%= form_for(@user, url: friend_be_mine_friend_path, :validate => true) do |user| %>
-		<%= user.text_field 'name', placeholder: "Your name Please", :validate => true %><span class="text-error">required</span></br>
-		<%= user.text_field 'email', placeholder: "Your Email Please", :validate => true %><span class="text-error">required</span></br>
-		<%= user.text_field 'address', placeholder: "Your Address Please", :validate => true %><span class="text-error">required</span></br>
+	<%= form_for(@user, url: friend_be_mine_friend_path ) do |user| %>
+		<%= user.text_field 'name', placeholder: "Your name Please" %><span class="text-error">required</span></br>
+		<%= user.text_field 'email', placeholder: "Your Email Please" %><span class="text-error">required</span></br>
+		<%= user.text_field 'address', placeholder: "Your Address Please" %><span class="text-error">required</span></br>
 		<%= user.submit "Be Mine Friend", class: "btn btn-primary" %>
 	<% end %>
 	</div>
