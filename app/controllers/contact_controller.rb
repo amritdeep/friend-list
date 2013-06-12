@@ -23,7 +23,7 @@ class ContactController < ApplicationController
       @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
       :to => '+9779808266447',
-      :body => "This is an message. It gets sent to #{@message}"
+      :body => "#{@message} ---- From:{@name} -- Email => #{@email} has send you this is an message"
       )
 
   	else

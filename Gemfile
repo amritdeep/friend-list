@@ -1,16 +1,19 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'will_paginate'
 gem 'client_side_validations'
 gem 'prawn'
 gem 'prawnto'
 gem 'twilio-ruby'
+
+gem "heroku"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +32,13 @@ group :development do
 	gem 'pry-rails'
 	gem 'better_errors'
 	gem 'binding_of_caller'
+
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'thin'
 end
 
 gem 'jquery-rails'

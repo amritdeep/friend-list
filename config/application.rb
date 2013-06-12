@@ -72,5 +72,8 @@ module Amrit
     config.action_mailer.default_url_options = {
         :host => "yourdomain.dev"
     }
+
+    # Heroku requires this to be false
+    config.assets.initialize_on_precompile=false
   end
 end
