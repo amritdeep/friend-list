@@ -1,0 +1,23 @@
+<%= render "/home/header" %>
+
+<div class="container">
+	<p><strong><%= @title %></strong><p>
+		<%= notice %>
+	<%= will_paginate @friend, previous_label: "<<", next_label: ">>", class: "pagination pagination-large" %>
+	<table class="table table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Email</th>
+		</tr>
+		<% @friend.each do |friend| %>
+		<tr>	
+			<td><%= friend.name %></td>
+			<td><%= friend.address %></td>
+			<td><%= friend.email %></td>
+		</tr>
+		<% end %>	
+    </table>
+
+    <%#= link_to "Generate PDF", friend_mine_friend_path(format: 'pdf') %>
+</div>
