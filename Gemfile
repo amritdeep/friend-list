@@ -7,6 +7,7 @@ gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 gem 'will_paginate'
+gem 'client_side_validations'
 gem 'prawn'
 gem 'prawnto'
 gem 'twilio-ruby'

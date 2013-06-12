@@ -3,6 +3,8 @@ Amrit::Application.routes.draw do
 
   get "sendtext/send_text_message"
 
+  post "sendtext/send_text_message"
+
   post "friend/be_mine_friend"
   get "friend/mine_friend"
   get "friend/friend_list"

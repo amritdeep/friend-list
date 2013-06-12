@@ -51,6 +51,7 @@ hgroup,
 nav,
 section {
   display: block;
+  background-image: url(images.jpeg);
 }
 
 audio,
@@ -228,6 +229,7 @@ body {
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
+  background-image: url(images.jpeg);
 }
 
 a {
@@ -290,7 +292,7 @@ a:focus {
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
   width: 960px;
-  background: background: url(../img/images.jpeg)
+  /*background: background: url(images.jpeg)*/
 }
 
 .span12 {
@@ -620,6 +622,7 @@ a:focus {
   margin-left: auto;
   *zoom: 1;
   background: #4ABFA7;
+  /*background: url(images.jpeg);*/
 }
 
 .container:before,
