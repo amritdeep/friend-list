@@ -1,0 +1,7 @@
+= render "home/header"
+.container
+	%h6 You search result
+	%ul
+	- @search.each do |s|
+		%li
+			= link_to s.name, "#"
