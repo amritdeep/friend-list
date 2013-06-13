@@ -23,9 +23,8 @@ class ContactController < ApplicationController
       @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
       :to => '+9779808266447',
-      :body => "#{@message} ---- From:{@name} -- Email => #{@email} has send you this is an message"
+      :body => "#{@message} ---- From:#{@name} -- Email => #{@email} has send you this is an message"
       )
-
   	else
   		redirect_to contact_contact_me_url
       flash[:notice] = "If you want to contact me, give me message"

@@ -24,4 +24,8 @@ class FriendController < ApplicationController
       format.pdf { render :layout => false }
     end
   end
+
+  def search
+    @search = User.search(params[:user][:name])
+  end
 end

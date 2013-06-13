@@ -5,5 +5,10 @@ class User < ActiveRecord::Base
   validates :name, :email, :address, :presence => true
 
   scope :orders, order("created_at DESC") # => Select * from user order by "created_at DESC"
+  #scope :search, where('name LIKE ?', "%#{name}%") # => Select "users".* from "users" where (name like '#{name}%')
+
+  def self.search(name)
+  	where('name LIKE ?', "#{name}")
+  end
+ end
   
-end

@@ -8,6 +8,7 @@ Amrit::Application.routes.draw do
   post "friend/be_mine_friend"
   get "friend/mine_friend"
   get "friend/friend_list"
+  get "friend/search"
 
   post "contact/send_msg"
   get "contact/contact_me"

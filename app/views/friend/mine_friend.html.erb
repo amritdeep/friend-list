@@ -5,6 +5,14 @@
 	<div class="alert alert-success">
 		<%= notice %>
 	</div>
+
+	<div class="search-query">
+		<%= form_tag("/friend/search", method: :get) do %>
+			<%= search_field(:user, :name) %>
+		<% end %>
+	</div>
+
+
 	<%= will_paginate @friend, previous_label: "<<", next_label: ">>", class: "pagination pagination-large" %>
 	<table class="table table table-striped">
 		<tr>
