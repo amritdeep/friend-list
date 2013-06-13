@@ -11,7 +11,7 @@ class ContactController < ApplicationController
     @message = params[:message]
 
   	if @name.present? && @email.present?
-  		redirect_to contact_contact_me_url
+  		redirect_to contact_me_url
   		flash[:notice] = "Thank You #{@name}, Your message has been received"
   		SendMessage.contact(@name, @email)
 
@@ -26,7 +26,7 @@ class ContactController < ApplicationController
       :body => "#{@message} ---- From:#{@name} -- Email => #{@email} has send you this is an message"
       )
   	else
-  		redirect_to contact_contact_me_url
+  		redirect_to contact_me_url
       flash[:notice] = "If you want to contact me, give me message"
   	end
   end

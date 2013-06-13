@@ -1,7 +1,16 @@
 = render "home/header"
 .container
 	%h6 You search result
+	.alert.alert-success
+		= notice
 	%ul
 	- @search.each do |s|
 		%li
 			= link_to s.name, "#"
+		- if s.address.present?
+			%li= s.address
+		- if s.email.present?
+			%li= s.email
+
+	= link_to "Back", friend_url
+	= link_to "Home", root_url

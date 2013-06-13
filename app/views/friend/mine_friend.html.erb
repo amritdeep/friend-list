@@ -6,10 +6,18 @@
 		<%= notice %>
 	</div>
 
+	<div class="alert alert-error">
+		<%= flash[:errors] %>
+	</div>
+
 	<div class="search-query">
-		<%= form_tag("/friend/search", method: :get) do %>
-			<%= search_field(:user, :name) %>
+		<%= form_tag("/friend/search", method: :get, class: "search") do %>
+			<%= search_field(:user, :name, placeholder: "Search by Name") %>
 		<% end %>
+	</div>
+
+	<div class="abc">
+
 	</div>
 
 
@@ -29,5 +37,5 @@
 		<% end %>	
     </table>
 
-    <%= link_to "Generate PDF", friend_mine_friend_path(format: 'pdf') %>
+    <%= link_to "Generate PDF", friend_path(format: 'pdf') %>
 </div>

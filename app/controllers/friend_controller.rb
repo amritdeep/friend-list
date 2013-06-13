@@ -3,14 +3,13 @@ class FriendController < ApplicationController
   	@user = User.new
   end
 
- 
   def be_mine_friend
   	@user = User.new(params[:user])
   	if @user.save
-  		redirect_to friend_mine_friend_url
+  		redirect_to friend_url
   		flash[:notice] = "#{@user[:name]} have been added to my friend list"
   	else
-  		redirect_to friend_friend_list_path
+  		redirect_to new_friend_url
       flash[:errors] = "Please Fill all the feild"
   	end  	
   end
@@ -22,10 +21,23 @@ class FriendController < ApplicationController
       format.html 
       format.json { render json: @friend }
       format.pdf { render :layout => false }
+      format.js
     end
   end
 
   def search
     @search = User.search(params[:user][:name])
+
+    @search.each do |s|
+      if s.name.present?
+        flash[:notice] = "#{s.name} have been found"
+      end
+    end
+
+    unless @search.present?
+      redirect_to friend_url
+      flash[:errors] = "Sorry Data not found"
+    end
+    
   end
 end

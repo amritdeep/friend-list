@@ -5,14 +5,16 @@ Amrit::Application.routes.draw do
 
   post "sendtext/send_text_message"
 
-  post "friend/be_mine_friend"
-  get "friend/mine_friend"
-  get "friend/friend_list"
-  get "friend/search"
+  match "friend/be_mine_friend" => "friend#be_mine_friend", as: :my_friend, via: :post
+  match "friend/mine_friend" => "friend#mine_friend", as: :friend, via: :get
+  match "friend/friend_list" => "friend#friend_list", as: :new_friend, via: :get
+  match "friend/search" => "friend#search", as: :search, via: :get
+  # get "friend/search"
+ 
+  match "contact/send_msg" => "contact#send_msg", as: :send_message, via: :post
+  match "contact/contact_me" => "contact#contact_me", as: :contact_me, via: :get
 
-  post "contact/send_msg"
-  get "contact/contact_me"
-  get "home/index"
+  match "home/index" => "home#index", as: :home, via: :get
 
   root to: "home#index"
 
