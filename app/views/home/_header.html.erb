@@ -1,14 +1,30 @@
 <div class="header">
 <div class="navbar">
 	<div class="navbar-inner">
-		<%#= link_to "Title", "#", class: "brand" %>
-		<!-- <%= @title %> -->
+		
+		<div class="help-block">
+			<p class="alert-success"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+			<p class="alert-error"><%= flash[:errors] %></p>
+		</div>
+
 		<ul class="nav">
 			<li><%= link_to "Home", root_path, class: "active" %></li>
 			<li><%= link_to "Friend", friend_url %></li>
 			<li><%= link_to "Be Mine Friend", new_friend_url %></li>
 			<li><%= link_to "Contact Me", contact_me_url %></li>
 		</ul>
+
+		<div>
+			<% if donation_signed_in? %>
+				<p>Login as <strong><%= current_donation.email %></strong> ||
+				<%= link_to "Log Out", destroy_donation_session_url, method: :delete %>
+			<% else %>
+				<%= link_to "Sign In", new_donation_session_url %> ||
+				<%= link_to "Sign Up", new_donation_registration_url %>
+			<% end %>
+		</div>
+
 	</div>
 </div>
 </div>

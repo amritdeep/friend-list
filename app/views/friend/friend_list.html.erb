@@ -1,9 +1,8 @@
-<div class="container">
-	<%= render "/home/header" %>
+
 	<div class="span5">
-	<div class="alert alert-warning">
-		<%= flash[:errors] %>
-	</div>
+          <div class="alert alert-warning">
+            	<%= flash[:errors] %>
+          </div>
 	<%= form_for(@user, url: my_friend_path ) do |user| %>
 		<%= user.text_field 'name', placeholder: "Your name Please" %><span class="text-error">required</span></br>
 		<%= user.text_field 'email', placeholder: "Your Email Please" %><span class="text-error">required</span></br>
@@ -11,4 +10,3 @@
 		<%= user.submit "Be Mine Friend", class: "btn btn-primary" %>
 	<% end %>
 	</div>
-</div

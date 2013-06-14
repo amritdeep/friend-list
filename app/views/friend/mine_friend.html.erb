@@ -1,17 +1,9 @@
-<div class="container">
-	<%= render "/home/header" %>
+<div class="">
 	<p><strong><%= @title %></strong><p>
-	<div class="alert alert-success">
-		<%= notice %>
-	</div>
-
-	<div class="alert alert-error">
-		<%= flash[:errors] %>
-	</div>
 
 	<div class="search-query">
-		<%= form_tag("/friend/search", method: :get, class: "search") do %>
-			<%= search_field(:user, :name, placeholder: "Search by Name") %>
+		<%= form_tag("/friend/search", method: :get, class: "form-search") do %>
+			<%= search_field(:user, :name, placeholder: "Search by Name", class: "input-medium search-query") %>
 		<% end %>
 	</div>
 

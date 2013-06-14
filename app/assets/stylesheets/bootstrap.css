@@ -224,12 +224,12 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Marmelad", Helvetica, Arial, sans-serif;
+  /*font-family: "Marmelad", Helvetica, Arial, sans-serif;*/
   font-size: 14px;
-  line-height: 20px;
+  /*line-height: 20px;*/
   color: #333333;
-  background-color: #ffffff;
-  background-image: url(images.jpeg);
+  background-color: #E0CECE;
+  /*background-image: url(images.jpeg);*/
 }
 
 a {

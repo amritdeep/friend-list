@@ -16,7 +16,7 @@ class FriendController < ApplicationController
 
   def mine_friend
   	@title = "Details list of Mine Friend"
-  	@friend = User.paginate(page: params[:page], per_page: 5).orders
+  	@friend = User.paginate(page: params[:page], per_page: 10).orders
   	respond_to do |format|
       format.html 
       format.json { render json: @friend }

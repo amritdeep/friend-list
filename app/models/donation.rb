@@ -8,4 +8,6 @@ class Donation < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :amount
   # attr_accessible :title, :body
+  
+  validates :email, :name, :amount, presence: true
 end
