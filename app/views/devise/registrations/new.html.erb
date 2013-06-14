@@ -1,3 +1,4 @@
+<%= render "home/header" %>
 <div class="container" >
 <h2>Sign up</h2>
 
@@ -13,7 +14,7 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", class: "btn" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>

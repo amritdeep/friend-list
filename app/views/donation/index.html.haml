@@ -1,5 +1,5 @@
-
 .container
+	= render "home/header"
 	= form_for(@donation, url: donate_url, method: :post) do |d|
 		= d.text_field 'name', placeholder: "Your Name Please" 
 		%br/

@@ -1,5 +1,6 @@
 class DonationController < ApplicationController
   
+  before_filter :authenticate_donation!
   
   def index
     @donation = Donation.new
