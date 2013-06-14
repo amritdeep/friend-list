@@ -27,7 +27,7 @@ class FriendController < ApplicationController
 
   def search
     @search = User.search(params[:user][:name])
-
+    
     @search.each do |s|
       if s.name.present?
         flash[:notice] = "#{s.name} have been found"
