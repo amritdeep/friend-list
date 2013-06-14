@@ -7,6 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <p class="errors"><%= flash[:errors] %></p>
+       <% if donation_signed_in? %>
+          <p>Login as <strong><%= current_donation.email %></strong> ||
+         <%= link_to "Log Out", destroy_donation_session_url, method: :delete %>
+         
+       <% else %>
+          <%= link_to "Sign In", new_donation_session_url %> ||
+          <%= link_to "Sign Up", new_donation_registration_url %>
+       <% end %>
+  </div>
 	<%= yield %>
 	<%= render "home/footer" %>
 </body>

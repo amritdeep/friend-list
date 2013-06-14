@@ -12,6 +12,7 @@ gem 'client_side_validations'
 gem 'prawn'
 gem 'prawnto'
 gem 'twilio-ruby'
+gem 'devise'
 
 gem "heroku"
 

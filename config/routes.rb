@@ -1,10 +1,15 @@
 Amrit::Application.routes.draw do
+  devise_for :donations
+
   get "sendtext/index"
 
   get "sendtext/send_text_message"
 
   post "sendtext/send_text_message"
-
+  
+  match "donation/index" => "donation#index", as: :donation, via: :get
+  match "donation/donate" => "donation#donate", as: :donate, via: :post
+    
   match "friend/be_mine_friend" => "friend#be_mine_friend", as: :my_friend, via: :post
   match "friend/mine_friend" => "friend#mine_friend", as: :friend, via: :get
   match "friend/friend_list" => "friend#friend_list", as: :new_friend, via: :get
