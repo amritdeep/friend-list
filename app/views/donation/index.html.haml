@@ -1,0 +1,8 @@
+
+.container
+	= form_for(@donation, url: donate_url, method: :post) do |d|
+		= d.text_field 'name', placeholder: "Your Name Please" 
+		%br/
+		= d.text_field "amount", placeholder: "Amount You Want to Donate"
+		%br/
+		= d.submit "Donate Please", class: "btn"
