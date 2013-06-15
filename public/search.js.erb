@@ -1,0 +1,9 @@
+<% @search.each do |s| %>
+	<%= s.name %><br/>
+	<% if s.address? %>
+		<%= s.address %><br/>
+	<% end %>
+	<% if s.email? %>
+		<%- s.email %>
+	<% end %>
+<% end %>
