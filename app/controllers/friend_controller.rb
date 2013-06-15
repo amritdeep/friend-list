@@ -38,6 +38,11 @@ class FriendController < ApplicationController
       redirect_to friend_url
       flash[:errors] = "Sorry Data not found"
     end
-    
+
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
   end
+
 end

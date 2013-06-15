@@ -2,7 +2,7 @@
 	<p><strong><%= @title %></strong><p>
 
 	<div class="search-query">
-		<%= form_tag("/friend/search", method: :get, class: "form-search") do %>
+		<%= form_tag("/friend/search", method: :get, class: "form-search", remote: true) do %>
 			<%= search_field(:user, :name, placeholder: "Search by Name", class: "input-medium search-query") %>
 		<% end %>
 	</div>

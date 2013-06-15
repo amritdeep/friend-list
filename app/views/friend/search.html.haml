@@ -1,25 +1,42 @@
-.container
-	%h6.alert-info You search result
-	%ul
-	- @search.each do |s|
-		%h6 
-		= s.name
-		%br/
+- @search.each do |s|
+	%h6
+	= s.name
+	%br/
 
-		- if s.address.present?
-			= s.address
-		- else
-			%h6 Address Not Found
-		%br/
+	- if s.address.present?
+		= s.address
+	- else
+		%h6 Address Not Found
+	%br/
 
-		- if s.email.present?
-			= s.email
-		- else
-			%h6 Email Not Found
-		%br/
-		%br/
+	- if s.email.present?
+		= s.email
+	- else
+		%h6 Email Not Found
+	%br/
+
+/ .container
+/ 	%h6.alert-info You search result
+/ 	%ul
+/ 	- @search.each do |s|
+/ 		%h6 
+/ 		= s.name
+/ 		%br/
+
+/ 		- if s.address.present?
+/ 			= s.address
+/ 		- else
+/ 			%h6 Address Not Found
+/ 		%br/
+
+/ 		- if s.email.present?
+/ 			= s.email
+/ 		- else
+/ 			%h6 Email Not Found
+/ 		%br/
+/ 		%br/
 
 
-	= link_to "Back", friend_url 
-	||
-	= link_to "Home", root_url
+/ 	= link_to "Back", friend_url 
+/ 	||
+/ 	= link_to "Home", root_url
