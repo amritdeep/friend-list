@@ -8,7 +8,6 @@ class FriendController < ApplicationController
 
   def show_details
     @user = User.find(params[:id])
-    #binding.pry    
   end
 
   def be_mine_friend
@@ -35,6 +34,7 @@ class FriendController < ApplicationController
 
   def search
     @search = User.search(params[:user][:name])
+    #binding.pry
     
     @search.each do |s|
       if s.name.present?

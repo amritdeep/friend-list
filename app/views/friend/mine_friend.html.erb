@@ -20,8 +20,8 @@
 			<th>Email</th>
 		</tr>
 		<% @friend.each do |friend| %>
-		<tr>	
-			<td><%= link_to friend.name, details_url(friend.id) %></td>
+		<tr>
+			<td><%= link_to friend.name, details_url(friend.id), id: friend.id, remote: true %></td>
 			<td><%= friend.address %></td>
 			<td><%= friend.email %></td>
 		</tr>
