@@ -1,6 +1,14 @@
 class FriendController < ApplicationController
+
+  before_filter :authenticate_donation!
+
   def friend_list
   	@user = User.new
+  end
+
+  def show_details
+    @user = User.find(params[:id])
+    #binding.pry    
   end
 
   def be_mine_friend

@@ -14,6 +14,7 @@ Amrit::Application.routes.draw do
   match "friend/mine_friend" => "friend#mine_friend", as: :friend, via: :get
   match "friend/friend_list" => "friend#friend_list", as: :new_friend, via: :get
   match "friend/search" => "friend#search", as: :search, via: :get
+  match "friend/show_details(/:id)" => "friend#show_details", as: :details
   # get "friend/search"
  
   match "contact/send_msg" => "contact#send_msg", as: :send_message, via: :post
@@ -78,5 +79,5 @@ Amrit::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+   match ':controller(/:action(/:id))(.:format)'
 end

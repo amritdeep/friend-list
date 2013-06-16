@@ -21,7 +21,7 @@
 		</tr>
 		<% @friend.each do |friend| %>
 		<tr>	
-			<td><%= friend.name %></td>
+			<td><%= link_to friend.name, details_url(friend.id) %></td>
 			<td><%= friend.address %></td>
 			<td><%= friend.email %></td>
 		</tr>
