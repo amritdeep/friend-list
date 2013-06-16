@@ -1,0 +1,21 @@
+%div
+	%h5 Details of #{@user.name}
+	/ %tabel.table
+	/ 	%tr
+	/ 		%th Name
+	/ 		%th	Details
+	/ 	%tr
+	/ 		%td= @user.name
+	/ 		%td= @user.address
+	%ul
+		= @user.name
+		%br/
+		= @user.address
+		%br/
+		= @user.email
+		%br/
+
+
+	= link_to "Back", friend_url
+	||
+	= link_to "Home", root_url
