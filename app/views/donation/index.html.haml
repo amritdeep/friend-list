@@ -1,6 +1,9 @@
-= form_for(@donation, url: donate_url, method: :post) do |d|
-	= d.text_field 'name', placeholder: "Your Name Please" 
-	%br/
-	= d.text_field "amount", placeholder: "Amount You Want to Donate"
-	%br/
-	= d.submit "Donate Please", class: "btn"
+%div.well.form-horizonta
+	%div.abc
+
+	= form_for(@donation, url: donate_url, method: :post, class: "well span5", remote: true) do |d|
+		= d.text_field 'name', placeholder: "Your Name Please", class: "span3"
+		%br/
+		= d.text_field "amount", placeholder: "Amount You Want to Donate", class:"span3"
+		%br/
+		= d.submit "Donate Please", class: "btn btn-primary"

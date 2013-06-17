@@ -3,22 +3,21 @@ class FriendController < ApplicationController
   layout "search", only: [:search, :show_details]
   before_filter :authenticate_donation!
 
+  respond_to :html, :json
+
   def friend_list
   	@user = User.new
   end 
 
   def show_details
     @user = User.find(params[:id])
-    
-    # test = @user.to_json
-    # render text: text
 
-    puts @user
+    respond_with @user
 
-    respond_to do |format|
-      format.html
-      format.json { render json: {user: @user.to_json}}
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: {user: @user.to_json}}
+    # end
   end
 
   def be_mine_friend
@@ -39,14 +38,12 @@ class FriendController < ApplicationController
       format.html 
       format.json { render json: @friend }
       format.pdf { render :layout => false }
-      format.js
     end
   end
 
   def search
     @search = User.search(params[:user][:name])
-    #binding.pry
-    
+
     @search.each do |s|
       if s.name.present?
         flash[:notice] = "#{s.name} have been found"
@@ -58,10 +55,8 @@ class FriendController < ApplicationController
       flash[:errors] = "Sorry Data not found"
     end
 
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
+    respond_with @search
+    
   end
 
 end
