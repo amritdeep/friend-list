@@ -7,7 +7,7 @@
 		<% end %>
 	</div>
 
-	<div class="abc", style:{min-height:10px;}>
+	<div class="abc">
 
 	</div>
 
@@ -24,7 +24,7 @@
 		<tbody>
 			<% @friend.each do |friend| %>
 			<tr>
-				<td><%= link_to friend.name, details_url(friend.id), id: friend.id %></td>
+				<td><%= link_to friend.name, details_url(friend.id), id: friend.id, remote: true %></td>
 				<td><%= friend.address %></td>
 				<td><%= friend.email %></td>
 			</tr>

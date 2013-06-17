@@ -10,3 +10,17 @@ $(document).ready ->
   	$(".abc").html "<p>Sorry this no such Data</p>"
 
 
+  $('a[id]').click (e)->
+  	e.preventDefault()
+  	id = $(this).attr('id')
+  	
+  	$.ajax '/friend/show_details', 
+  		dataType: 'html'
+  		data: {id: id}
+  		success: (result) ->
+  			$('.abc').html result
+
+  		error: ->
+  			alert "Error"
+  			$('.abc').html "Unable to Connect"
+
