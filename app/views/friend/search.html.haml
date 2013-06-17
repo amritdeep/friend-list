@@ -1,3 +1,4 @@
+%h6 Search Result
 - @search.each do |s|
 	%h6
 	= s.name
@@ -15,7 +16,9 @@
 		%h6 Email Not Found
 	%br/
 
+	= link_to "Details", details_url(s.id)
 
-= link_to "Back", friend_url 
-||
-= link_to "Home", root_url
+
+/ = link_to "Back", friend_url 
+/ ||
+/ = link_to "Home", root_url

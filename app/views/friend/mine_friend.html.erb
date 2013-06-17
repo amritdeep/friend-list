@@ -2,30 +2,34 @@
 	<p><strong><%= @title %></strong><p>
 
 	<div class="search-query">
-		<%= form_tag("/friend/search", method: :get, class: "form-search", remote: true) do %>
-			<%= search_field(:user, :name, placeholder: "Search by Name", class: "input-medium search-query") %>
+		<%= form_tag("/friend/search", method: :get, class: "well form-search", remote: true) do %>
+			<%= search_field(:user, :name, placeholder: "Search by Name", class: "span3 input-medium search-query") %>
 		<% end %>
 	</div>
 
-	<div class="abc">
+	<div class="abc", style:{min-height:10px;}>
 
 	</div>
 
 
 	<%= will_paginate @friend, previous_label: "<<", next_label: ">>", class: "pagination pagination-large" %>
-	<table class="table table table-striped">
-		<tr>
-			<th>Name</th>
-			<th>Address</th>
-			<th>Email</th>
-		</tr>
-		<% @friend.each do |friend| %>
-		<tr>
-			<td><%= link_to friend.name, details_url(friend.id), id: friend.id, remote: true %></td>
-			<td><%= friend.address %></td>
-			<td><%= friend.email %></td>
-		</tr>
-		<% end %>	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @friend.each do |friend| %>
+			<tr>
+				<td><%= link_to friend.name, details_url(friend.id), id: friend.id %></td>
+				<td><%= friend.address %></td>
+				<td><%= friend.email %></td>
+			</tr>
+			<% end %>	
+		</tbody>	
     </table>
 
     <%= link_to "Generate PDF", friend_path(format: 'pdf') %>

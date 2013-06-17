@@ -1,13 +1,20 @@
 class FriendController < ApplicationController
 
+  layout "search", only: [:search, :show]
   before_filter :authenticate_donation!
 
   def friend_list
   	@user = User.new
-  end
+  end 
 
   def show_details
     @user = User.find(params[:id])
+    
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    #   format.js
+    # end
   end
 
   def be_mine_friend
