@@ -1,7 +1,6 @@
 <% if flash[:errors].present? %>
 	$('.abc').html('');
 	$('.abc').append("<%= flash[:errors] %>");
-	alert('hello')
 <% else %>
 	$('.abc').html('');
 	$('.new_donation').html("<%=j render '/donation/donate' %>");
