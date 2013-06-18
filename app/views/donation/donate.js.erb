@@ -1,9 +1,10 @@
 <% if flash[:errors].present? %>
 	$('.abc').html('');
 	$('.abc').append("<%= flash[:errors] %>");
+	alert('hello')
 <% else %>
-	$('.new_donation').html('');
-	$('.new_donation').append("<%=j render '/donation/donate' %>");
+	$('.abc').html('');
+	$('.new_donation').html("<%=j render '/donation/donate' %>");
 <% end %>
 
 <%#= binding.pry %>

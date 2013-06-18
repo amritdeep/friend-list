@@ -1,6 +1,6 @@
 %div.well
 	%h4 Thank You
 	%p
-		Thank Your #{@name}, You have donate #{@amount}
+		Thank Your #{@name}, You have donate #{number_to_currency(@amount)}
 
 	= link_to "Home", root_url, class: "btn btn-success"

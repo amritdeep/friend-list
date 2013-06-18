@@ -13,8 +13,9 @@ class DonationController < ApplicationController
     @donate = Donation.new(params[:donation])
 
     respond_to do |format|
-      if @name.empty? || @amount.empty?
-        redirect_to donation_url
+      if @name.empty? || @amount.empty?  #|| @amount.nil? || params[:name].nil? || params[:amount].nil?
+        #binding.pry
+        #redirect_to donation_url
         flash[:errors] = "Sorry, You have not donate !!"
 
         format.html
@@ -22,6 +23,7 @@ class DonationController < ApplicationController
 
       else
         flash[:notice] = "Thank You"
+        flash[:errors] = nil
 
         format.html
         format.js
