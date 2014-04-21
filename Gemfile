@@ -32,9 +32,11 @@ end
 
 group :development do
 	gem 'pry-rails'
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-nav'
 	gem 'better_errors'
 	gem 'binding_of_caller'
-
   gem 'sqlite3'
 end
 
@@ -45,6 +47,31 @@ end
 
 gem 'jquery-rails'
 
+
+group :development, :test do
+  # gem 'haml-rails'
+  # gem 'slim-rails'
+
+  # Gem for Development        
+    gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'guard-rspec'
+  # gem 'annotate'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+
+  # Gem for test
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'factory_girl'
+  gem 'database_cleaner'
+
+  # gem 'guard-spork'
+  # gem 'childprocess'
+  # gem 'spork'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
