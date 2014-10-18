@@ -13,7 +13,7 @@ class SendtextController < ApplicationController
   	@twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
   	@twilio_client.account.sms.messages.create(
   		:from => "+1#{twilio_phone_number}",
-  		:to => '+9779808266447',
+  		:to => 'My-phone-number',
   		:body => "This is an message. It gets sent to "
   		)
   end
